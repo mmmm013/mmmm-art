@@ -24,7 +24,6 @@ html{scroll-behavior:smooth}
 body{background:var(--warm-black);color:var(--ivory);font-family:var(--sans);overflow-x:hidden;line-height:1.6;cursor:default}
 ::selection{background:var(--gold);color:var(--warm-black)}
 a{color:inherit;text-decoration:none}
-
 /* FLOATING mmmm- MENU */
 .mmmm-nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;transition:background .4s,backdrop-filter .4s}
 .mmmm-nav.scrolled{background:rgba(13,13,13,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.12)}
@@ -33,7 +32,6 @@ a{color:inherit;text-decoration:none}
 .mmmm-links{display:flex;gap:2rem;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
 .mmmm-links a{transition:color .3s}
 .mmmm-links a:hover{color:var(--gold)}
-
 /* SANCTUARY ENTRANCE */
 .entrance{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .entrance-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.35) saturate(.8);transition:transform 12s ease-out}
@@ -46,13 +44,11 @@ a{color:inherit;text-decoration:none}
 .entrance-content .subtitle{font-size:.9rem;color:var(--muted);margin-top:1rem;font-weight:300;max-width:420px;margin-left:auto;margin-right:auto}
 .entrance-cta{display:inline-block;margin-top:2.5rem;padding:.7rem 2.5rem;border:1px solid rgba(201,168,76,.4);font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);transition:all .3s}
 .entrance-cta:hover{background:var(--gold);color:var(--warm-black);border-color:var(--gold)}
-
 /* ARCHIVAL INDEX SECTION */
 .archive-section{padding:6rem 2rem;max-width:1200px;margin:0 auto}
 .archive-section .section-eyebrow{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);opacity:.6}
 .archive-section h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;margin-top:.5rem;letter-spacing:.03em}
 .archive-section .section-line{width:40px;height:1px;background:var(--gold);opacity:.3;margin:1.5rem 0}
-
 /* GALLERY GRID */
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
 .gallery-item{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer}
@@ -61,14 +57,13 @@ a{color:inherit;text-decoration:none}
 .gallery-item .item-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,13,.8) 0%,transparent 50%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
 .gallery-item:hover .item-overlay{opacity:1}
 .gallery-item .item-title{font-family:var(--serif);font-size:1.1rem;font-weight:400}
-.gallery-item .item-year{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:.3rem}
-.gallery-item .item-medium{font-size:.7rem;color:var(--muted);margin-top:.15rem}
-
+.gallery-item .item-caption{font-size:.7rem;color:var(--muted);margin-top:.3rem;line-height:1.4}
+.gallery-item .item-more{display:inline-block;margin-top:.6rem;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:.25rem .6rem;transition:all .3s}
+.gallery-item .item-more:hover{background:var(--gold);color:var(--warm-black)}
 /* ARTIST STATEMENT */
 .statement{padding:6rem 2rem;max-width:800px;margin:0 auto;text-align:center}
 .statement blockquote{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:300;font-style:italic;line-height:1.6;color:var(--ivory);opacity:.9}
 .statement cite{display:block;margin-top:1.5rem;font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-style:normal}
-
 /* CONTACT / INQUIRY */
 .inquiry{padding:5rem 2rem;max-width:600px;margin:0 auto;text-align:center}
 .inquiry .section-eyebrow{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);opacity:.6}
@@ -76,15 +71,20 @@ a{color:inherit;text-decoration:none}
 .inquiry p{color:var(--muted);font-size:.85rem;margin-top:.75rem;max-width:400px;margin-left:auto;margin-right:auto}
 .inquiry-email{display:inline-block;margin-top:1.5rem;padding:.65rem 2.5rem;border:1px solid rgba(201,168,76,.35);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);transition:all .3s}
 .inquiry-email:hover{background:var(--gold);color:var(--warm-black)}
-
 /* DIVIDER */
 .divider{width:60px;height:1px;background:var(--gold);opacity:.2;margin:0 auto}
-
 /* FOOTER */
 footer{padding:3rem 2rem;text-align:center;border-top:1px solid rgba(201,168,76,.08)}
 footer .foot-brand{font-family:var(--serif);font-size:1rem;letter-spacing:.15em;color:var(--gold);opacity:.5}
 footer p{font-size:.65rem;color:var(--muted);margin-top:.5rem;letter-spacing:.1em}
-
+/* STORY MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(13,13,13,.92);z-index:200;display:none;align-items:center;justify-content:center;padding:2rem}
+.modal-overlay.open{display:flex}
+.modal-box{background:#111;border:1px solid rgba(201,168,76,.2);max-width:560px;width:100%;padding:2.5rem;position:relative}
+.modal-title{font-family:var(--serif);font-size:1.6rem;font-weight:300;color:var(--ivory);margin-bottom:1rem}
+.modal-story{font-size:.88rem;color:var(--muted);line-height:1.8}
+.modal-close{position:absolute;top:1rem;right:1.25rem;font-size:1.2rem;color:var(--muted);cursor:pointer;transition:color .2s}
+.modal-close:hover{color:var(--gold)}
 /* RESPONSIVE */
 @media(max-width:768px){
 .mmmm-nav{padding:1rem 1.25rem}
@@ -99,124 +99,216 @@ footer p{font-size:.65rem;color:var(--muted);margin-top:.5rem;letter-spacing:.1e
 </style>
 </head>
 <body>
-
 <!-- FLOATING mmmm- MENU -->
 <nav class="mmmm-nav" id="mmmm-nav">
 <a href="#" class="mmmm-brand">mmmm<span>-</span>ART</a>
-<div class="mmmm-links">
-<a href="#archive">Archive</a>
+<div class="mmmm-links"><a href="#archive">Archive</a>
 <a href="#statement">Statement</a>
 <a href="#inquiry">Inquiry</a>
 </div>
 </nav>
-
 <!-- SANCTUARY ENTRANCE -->
 <section class="entrance">
-<div class="entrance-bg" id="entrance-bg" style="background-image:url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=1800&q=80')"></div>
+<div class="entrance-bg" style="background-image:url('Beyond.jpeg')"></div>
 <div class="entrance-overlay"></div>
 <div class="entrance-content">
-<div class="marker">Digital Sanctuary &middot; Est. 2026</div>
+<p class="marker">Digital Sanctuary &middot; Est. 2026</p>
 <h1>The Art of<br><em>Clayton Michael Gunn</em></h1>
 <p class="subtitle">Archival works, immersive experiences, and the permanent record of a living practice.</p>
 <a href="#archive" class="entrance-cta">Enter the Archive</a>
 </div>
 </section>
-
-<div class="divider" style="margin:4rem auto"></div>
-
-<!-- ARCHIVAL INDEX -->
+<!-- ARCHIVAL INDEX SECTION -->
 <section class="archive-section" id="archive">
-<div class="section-eyebrow">Archival Index</div>
+<p class="section-eyebrow">Archival Index</p>
 <h2>Selected Works</h2>
 <div class="section-line"></div>
-<div class="gallery-grid" id="gallery">
-
-<div class="gallery-item">
-<img src="Beyond.jpeg" alt="Work I">
+<div class="gallery-grid">
+<!-- Beyond -->
+<div class="gallery-item" onclick="openStory('Beyond','A moody sky soaring above the ocean you can get lost in',null)">
+<img src="Beyond.jpeg" alt="Beyond" loading="lazy">
 <div class="item-overlay">
-<div class="item-title">Untitled No. 1</div>
-<div class="item-year">2024</div>
-<div class="item-medium">Mixed media on canvas</div>
+<div class="item-title">Beyond</div>
+<div class="item-caption">A moody sky soaring above the ocean you can get lost in</div>
 </div>
 </div>
-
-<div class="gallery-item">
-<img src="Guiding%20Light.JPG" alt="Work II">
+<!-- Clayton Gunn Artist Bio -->
+<div class="gallery-item" onclick="openStory('Artist','',null)">
+<img src="Clayton Gunn Artist Bio 18003322.pdf" alt="CMG" loading="lazy" onerror="this.style.display='none'">
 <div class="item-overlay">
-<div class="item-title">Fractured Light</div>
-<div class="item-year">2025</div>
-<div class="item-medium">Oil on panel</div>
+<div class="item-title">C.M. Gunn</div>
+<div class="item-caption">The artist</div>
 </div>
 </div>
-
-<div class="gallery-item">
-<img src="Connected%20Through%20It%20All.jpeg" alt="Work III">
+<!-- Connected Through It All -->
+<div class="gallery-item" onclick="openStory('Connected Through It All','A structure connected deeply and intentionally',null)">
+<img src="Connected Through It All.jpg" alt="Connected Through It All" loading="lazy">
 <div class="item-overlay">
-<div class="item-title">The Weight of Silence</div>
-<div class="item-year">2025</div>
-<div class="item-medium">Acrylic and gold leaf</div>
+<div class="item-title">Connected Through It All</div>
+<div class="item-caption">A structure connected deeply and intentionally</div>
 </div>
 </div>
-
-<div class="gallery-item">
-<img src="Endurance.jpeg" alt="Work IV">
+<!-- Divided Tongues Of Fire -->
+<div class="gallery-item" onclick="openStory('Divided Tongues Of Fire','Based on the night of Pentecost',null)">
+<img src="Divided Tongues Of Fire.jpeg" alt="Divided Tongues Of Fire" loading="lazy">
 <div class="item-overlay">
-<div class="item-title">Meridian</div>
-<div class="item-year">2026</div>
-<div class="item-medium">Digital print, archival ink</div>
+<div class="item-title">Divided Tongues Of Fire</div>
+<div class="item-caption">Based on the night of Pentecost</div>
 </div>
 </div>
-
-<div class="gallery-item">
-<img src="Pain.JPG" alt="Work V">
+<!-- Endurance -->
+<div class="gallery-item" onclick="openStory('Endurance','Energy, friction and perseverance.',null)">
+<img src="Endurance.jpeg" alt="Endurance" loading="lazy">
 <div class="item-overlay">
-<div class="item-title">Passage</div>
-<div class="item-year">2026</div>
-<div class="item-medium">Graphite and charcoal</div>
+<div class="item-title">Endurance</div>
+<div class="item-caption">Energy, friction and perseverance.</div>
 </div>
 </div>
-
-<div class="gallery-item">
-<img src="Wind%20Across%20The%20Deep.jpeg" alt="Work VI">
+<!-- Guiding Light -->
+<div class="gallery-item" onclick="openStory('Guiding Light','The subtle lighthouse guides your way through the rough seas',null)">
+<img src="Guiding Light.JPG" alt="Guiding Light" loading="lazy">
 <div class="item-overlay">
-<div class="item-title">Interior Study</div>
-<div class="item-year">2024</div>
-<div class="item-medium">Watercolor on paper</div>
+<div class="item-title">Guiding Light</div>
+<div class="item-caption">The subtle lighthouse guides your way through the rough seas</div>
 </div>
 </div>
-
+<!-- I Made You -->
+<div class="gallery-item" onclick="openStory('I Made You','Based on a vision of Jesus when I was 24, He said I made you',null)">
+<img src="I Made You.jpeg" alt="I Made You" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">I Made You</div>
+<div class="item-caption">Based on a vision of Jesus when I was 24, He said &lsquo;I made you&rsquo;</div>
+</div>
+</div>
+<!-- It Is Finished -->
+<div class="gallery-item" onclick="openStory('It Is Finished','A depiction of Calvary the evening after the crucifixion',null)">
+<img src="IT IS FINISHED CROPPED.jpg" alt="It Is Finished" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">It Is Finished</div>
+<div class="item-caption">A depiction of Calvary the evening after the crucifixion</div>
+</div>
+</div>
+<!-- Knoll -->
+<div class="gallery-item" onclick="openStory('Knoll','Cornerstone work created before severe devastating hospitilization',null)">
+<img src="Knoll.JPG" alt="Knoll" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">Knoll</div>
+<div class="item-caption">Cornerstone work created before severe devastating hospitilization</div>
+</div>
+</div>
+<!-- Pain -->
+<div class="gallery-item" onclick="openStory('Pain','Painted on release from hospitalization',null)">
+<img src="Pain.JPG" alt="Pain" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">Pain</div>
+<div class="item-caption">Painted on release from hospitalization</div>
+</div>
+</div>
+<!-- Permitted Release -->
+<div class="gallery-item" onclick="openStory('Permitted Release','Painted during a session alongside a friend who suffers also with his mental health',null)">
+<img src="Permitted Release.JPG" alt="Permitted Release" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">Permitted Release</div>
+<div class="item-caption">Painted during a session alongside a friend who suffers also with his mental health</div>
+</div>
+</div>
+<!-- Seaside Settlement -->
+<div class="gallery-item" onclick="openStory('Seaside Settlement','A charming scape of water meets village.',null)">
+<img src="Seaside Settlement.JPG" alt="Seaside Settlement" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">Seaside Settlement</div>
+<div class="item-caption">A charming scape of water meets village.</div>
+</div>
+</div>
+<!-- Tempest Night -->
+<div class="gallery-item" onclick="openStory('Tempest Night','Through the storm we remain',null)">
+<img src="Tempest Night.JPG" alt="Tempest Night" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">Tempest Night</div>
+<div class="item-caption">Through the storm we remain</div>
+</div>
+</div>
+<!-- The Dragon, The Fish And The Savior -->
+<div class="gallery-item" onclick="openStory('The Dragon, The Fish And The Savior','Christ, the devil, and us. Contemporary impressionist expressionism',null)">
+<img src="The Dragon, The Fish And The Savior.JPG" alt="The Dragon, The Fish And The Savior" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">The Dragon, The Fish And The Savior</div>
+<div class="item-caption">Christ, the devil, and us. Contemporary impressionist expressionism</div>
+</div>
+</div>
+<!-- The Wine And The Blood -->
+<div class="gallery-item" onclick="openStory('The Wine And The Blood','A glass and rivers of blood',null)">
+<img src="The Wine And The Blood.JPG" alt="The Wine And The Blood" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">The Wine And The Blood</div>
+<div class="item-caption">A glass and rivers of blood</div>
+</div>
+</div>
+<!-- Thoughts And Darts -->
+<div class="gallery-item" onclick="openStory('Thoughts And Darts','A visual depiction of mental warfare',null)">
+<img src="Thoughts And Darts.JPG" alt="Thoughts And Darts" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">Thoughts And Darts</div>
+<div class="item-caption">A visual depiction of mental warfare</div>
+</div>
+</div>
+<!-- Wind Across The Deep -->
+<div class="gallery-item" onclick="openStory('Wind Across The Deep','A lovely and easy expressionist waterscape',null)">
+<img src="Wind Across The Deep.jpeg" alt="Wind Across The Deep" loading="lazy">
+<div class="item-overlay">
+<div class="item-title">Wind Across The Deep</div>
+<div class="item-caption">A lovely and easy expressionist waterscape</div>
+</div>
+</div>
 </div>
 </section>
-
 <div class="divider"></div>
-
 <!-- ARTIST STATEMENT -->
 <section class="statement" id="statement">
-<blockquote>I build what I see before I understand it. The work is the act of finding out what was already there, waiting to be named.</blockquote>
+<blockquote>&ldquo;I build what I see before I understand it. The work is the act of finding out what was already there, waiting to be named.&rdquo;</blockquote>
 <cite>Clayton Michael Gunn</cite>
 </section>
-
 <div class="divider"></div>
-
-<!-- INQUIRY -->
+<!-- CONTACT / INQUIRY -->
 <section class="inquiry" id="inquiry">
-<div class="section-eyebrow">Acquisitions &amp; Commissions</div>
+<p class="section-eyebrow">Acquisitions &amp; Commissions</p>
 <h2>Inquire</h2>
 <p>For collector inquiries, exhibition proposals, or commissioned work, please reach out directly.</p>
 <a href="mailto:Gputnam@gputnammusic.com" class="inquiry-email">Contact</a>
 </section>
-
 <!-- FOOTER -->
 <footer>
 <div class="foot-brand">mmmm-ART</div>
 <p>&copy; 2026 Clayton Michael Gunn. All rights reserved. Digital Sanctuary by G Putnam Music LLC.</p>
 </footer>
-
+<!-- STORY MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeStory(event)">
+<div class="modal-box">
+<span class="modal-close" onclick="closeModal()">&times;</span>
+<div class="modal-title" id="modal-title"></div>
+<div class="modal-story" id="modal-story"></div>
+</div>
+</div>
 <script>
 window.addEventListener('scroll',()=>{
 const nav=document.getElementById('mmmm-nav');
 if(window.scrollY>60)nav.classList.add('scrolled');
 else nav.classList.remove('scrolled');
+});
+function openStory(title,caption,story){
+if(!story)return;
+document.getElementById('modal-title').textContent=title;
+document.getElementById('modal-story').textContent=story;
+document.getElementById('modal-overlay').classList.add('open');
+}
+function closeStory(e){
+if(e.target===document.getElementById('modal-overlay'))closeModal();
+}
+function closeModal(){
+document.getElementById('modal-overlay').classList.remove('open');
+}
+document.addEventListener('keydown',e=>{
+if(e.key==='Escape')closeModal();
 });
 </script>
 </body>
